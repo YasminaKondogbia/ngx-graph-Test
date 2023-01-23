@@ -13,38 +13,45 @@ export class AppComponent {
   dataExemple = [
     {
       id: 'start',
+      name: 'Exemple1',
       label: 'scan',
-      position: 'x0',
+      link: '1',
     },
     {
       id: '1',
+      name: 'Exemple2',
       label: 'Event#a',
-      position: 'x1',
+      link: '3',
     },
     {
       id: '2',
+      name: 'Exemple3',
       label: 'Event#x',
-      position: 'x2',
+      link: '3',
     },
     {
       id: '3',
+      name: 'Exemple4',
       label: 'Event#b',
-      position: 'x3',
+      link: 'start',
     },
     {
       id: '4',
+      name: 'Exemple5',
       label: 'Event#c',
-      position: 'x4',
+      link: '2',
     },
     {
       id: '5',
+      name: 'Exemple6',
       label: 'Event#y',
-      position: 'x5',
+      link: 'start',
     },
     {
       id: '6',
+      name: 'Exemple7',
       label: 'Event#z',
-      position: 'x6',
+      link: '5',
     },
   ];
   public ngOnInit(): void {
@@ -52,8 +59,19 @@ export class AppComponent {
   }
 
   showGraph() {
-    this.hierarchialGraph.nodes = [];
-
-    this.hierarchialGraph.links = [];
+    this.dataExemple.forEach((element) => {
+      this.hierarchialGraph.nodes.push({
+        id: element.id,
+        label: element.name,
+      });
+      this.hierarchialGraph.links.push({
+        source: element.id,
+        target: element.link,
+        label: element.label,
+      });
+    });
+  }
+  alert(node) {
+    console.log(node);
   }
 }

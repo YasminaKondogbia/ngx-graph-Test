@@ -3,6 +3,7 @@
   [links]="hierarchialGraph.links"
   [nodes]="hierarchialGraph.nodes"
   [legend]="true"
+  [curve]="curve"
   [draggingEnabled]="false"
 >
   <ng-template #defsTemplate>
@@ -26,6 +27,7 @@
       [tooltipPlacement]="'top'"
       [tooltipType]="'tooltip'"
       [tooltipTitle]="node.position"
+      (click)="alert(node)"
     >
       <svg:rect
         [attr.width]="node.width"
