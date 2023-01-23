@@ -53,6 +53,24 @@ export class AppComponent {
       label: 'Event#z',
       link: '5',
     },
+    {
+      id: '7',
+      name: 'Exemple8',
+      label: 'Event#z',
+      link: '3',
+    },
+    {
+      id: '9',
+      name: 'Exemple9',
+      label: 'Event#z',
+      link: '5',
+    },
+    {
+      id: '10',
+      name: 'Exemple10',
+      label: 'Event#z',
+      link: '4',
+    },
   ];
   public ngOnInit(): void {
     this.showGraph();
